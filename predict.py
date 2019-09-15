@@ -13,4 +13,7 @@ print(test_image.shape)
 test_image=test_image/127.5 -1
 #predict the result
 result = model.predict(test_image)
-print(result)
+if(result>0.5):
+	print("Given image is of female. And predicted with an confidence of ",result*100,"%")
+else:
+	print("Given image is of male. And predicted with an confidence of ",(1-result)*100,"%")
